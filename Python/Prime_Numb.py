@@ -1,6 +1,6 @@
 # Python program to check if the input number is prime or not
 
-num = 407
+num = 404
 
 # take input from the user
 # num = int(input("Enter a number: "))
