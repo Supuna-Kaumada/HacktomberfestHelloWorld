@@ -1,2 +1,2 @@
-print("Hello World!")
-print("ayubowan!")
+print("Hello sri lanka!")
+
