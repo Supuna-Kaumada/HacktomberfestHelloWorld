@@ -5,7 +5,8 @@ public class HelloWorld {
         System.out.println("Hello, World");
 	System.out.println("Hello, Thilini");
 	System.out.println("Hello, Sewwandi");
-	System.out.println("Hello, HacktomberFestTShirt");
+    System.out.println("Hello, HacktomberFestTShirt");
+    System.out.println("Hello world : By Sahan Siriwardhan");
     }
 
 }
