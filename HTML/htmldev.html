@@ -1,0 +1,87 @@
+<?php
+ 
+ class UserValidator {
+     
+     private $data;
+     private $errors = [];
+     private static $fields = ['username', 'email'];
+
+     public function __construct($post_data){
+        $this->data = $post_data;
+     }
+
+     public function validateForm(){
+        foreach(self::$fields as $field){
+            if(!array_key_exists($field, $this->data)){
+                trigger_error("$field is not present in data");
+                return;
+            }
+        }
+
+        $this->validateUsername();
+        $this->validateEmail();
+        return $this->errors;
+     }
+
+     private function validateUsername(){
+
+        $val = trin($this->data['username']);
+
+        if(empty($val)){
+            $this->addError('username', 'username cannot be empty');
+        }else{
+            if(!preg_match('/^[a-zA-Z0-9]{6,12}$/', $val)){
+                $this->addError('username', 'Username must be 6-12 chars and alphanumeric');
+            }
+        }
+
+
+     }
+     
+     <?php
+
+  require('user_validator.php');
+
+ if(isset($_POST['submit'])){
+   // validate entries
+   $validation = new UserValidator($_POST);
+   $errors = $validation->validateForm();
+
+   // save data to db
+ }
+
+
+?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+
+    <div class="new-user">
+      <h2>Create New User</h2>
+      <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+        
+        <label>Username: </label>
+        <input type="text" name="username">
+        <div class="error">
+          <?php echo $error['username'] ?? '' ?> 
+        </div>
+
+        <label>Email: </label>
+        <input type="text" name="email">
+        <div class="error">
+          <?php echo $error['email'] ?? '' ?> 
+        </div>
+
+        <input type="submit" value="submit" name="submit">
+      
+      </form>
+    </div>
+
+</body>
+</html>
