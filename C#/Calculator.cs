@@ -40,7 +40,6 @@ namespace Arithmetic
             if(n2==0) 
             { 
                 Console.WriteLine("ALERT: Division by zero is invalid!"); 
-                 
             } 
             else 
             { 
