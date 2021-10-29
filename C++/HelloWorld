@@ -2,6 +2,6 @@
 using namespace std;
 
 int main(){
-cout << "Hacktomberfest" << endl;
+cout << "Hacktomberfest" << endl;//output
   return 0
   }
