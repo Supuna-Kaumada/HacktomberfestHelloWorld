@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostram>
 using namespace std;
 
 int main(){
 cout << "Hacktomberfest" << endl;
-  return 0
+  return 0;
   }
